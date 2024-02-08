@@ -6,12 +6,11 @@ public class Main {
         //Puedo seleccionar la dificultad haciendo que se elija la cantidad de barcos
         int turno=30;
         boolean victoria;
-        int contadorLancha = 2;
-        int contadorBuque = 2 ;
-        int contadorAcorazado = 1 ;
-        int contadorPortaviones = 1;
-        int contadorTotal = (contadorLancha*1)+(contadorBuque*3)+(contadorAcorazado*4)+(contadorPortaviones*5);
-        int[] arrayContadores = new int[] {contadorTotal,contadorLancha,contadorBuque,contadorAcorazado,contadorPortaviones};
+        Barco.contadorLancha = 2;
+        Barco.contadorBuque = 2 ;
+        Barco.contadorAcorazado = 1 ;
+        Barco.contadorPortavion = 1;
+        int[] arrayContadores = new int[] {Barco.contadorTotal,Barco.contadorLancha,Barco.contadorBuque,Barco.contadorAcorazado,Barco.contadorPortavion};
         String[][] tablero= new String[dimensionesTablero][dimensionesTablero];
         rellenarTablero(dimensionesTablero, tablero);
         /*
@@ -20,10 +19,10 @@ public class Main {
         el 3 son las coordenadas
         el 4 es el estado
 
-        int[][][][] arrayLanchas= new int[contadorLancha][1][2][2];
-        int[][][][] arrayBuques= new int[contadorLancha][3][2][2];
-        int[][][][] arrayAcorazados= new int[contadorLancha][4][2][2];
-        int[][][][] arrayPortaviones= new int[contadorLancha][5][2][2];
+        int[][][][] arrayLanchas= new int[Barco.contadorLancha][1][2][2];
+        int[][][][] arrayBuques= new int[Barco.contadorLancha][3][2][2];
+        int[][][][] arrayAcorazados= new int[Barco.contadorLancha][4][2][2];
+        int[][][][] arrayPortaviones= new int[Barco.contadorLancha][5][2][2];
         */
         //int dimensionesTablero= introducirDimensiones();
 
@@ -35,7 +34,7 @@ public class Main {
         visualizarTableroAcertado(tablero);
 
 
-        victoria=disparar(tablero, contadorTotal,turno);
+        victoria=disparar(tablero, Barco.contadorTotal,turno);
         mensajeFinal(victoria);
 
 
